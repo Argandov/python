@@ -87,3 +87,8 @@ Initialize it every time python (interactive) starts:
 export PYTHONSTARTUP=$HOME:this_file.py
 ```
 or put it into .bashrc
+
+---
+
+TO-DO:
+- Upload experiments pt.0
