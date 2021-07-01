@@ -27,7 +27,7 @@ def people_list(num_people):
         result.append(person)
     return result
 
-# Case 2: Generating a generator of 1000000 entries (Exactly the same data)
+# Case 2: Generator of 1000000 entries (Exactly the same data)
 def people_gen(num_people):
     for i in range(num_people):
         person = {
@@ -37,10 +37,12 @@ def people_gen(num_people):
                 }
         yield person
 
+# Use people_list OR people_gen to profile the performance and see the difference
 # people = people_list(1000000)       # ~ [310.24609375] MB
 people = people_gen(1000000)      # [38.640625] MB
 
-# For generator, the memory usage DOES NOT change, even when unpacking the generator:
+# For people_gen, the memory usage DOES NOT change, even when unpacking the generator object:
+# (Commented because it takes a lot of time to execute)
 # counter = 0
 # for i in people:
 #     for k, v in i.items():
