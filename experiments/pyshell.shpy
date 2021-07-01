@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# First the program is executed with bash (shebang line). Then,
+# This bash execution will run "python $0", re-opening the file but with
+# python and ignoring the bash section.
+
+"""":
+do_some_stuff () {
+
+  echo "Some stuff done by bash"
+  return 0
+}
+
+do_some_stuff
+
+exec  /usr/bin/python $0
+exit 1
+"""#"
+
+def do_some_stuff():
+	print("some stuff done by python")
+	return 0
+
+do_some_stuff()
+
