@@ -42,7 +42,7 @@ Install perf
 `apt install perf`
 
 
-A good script to benchmark and compare is [this one](https://github.com/Argandov/python/blob/main/exercises_lessons/generators_memory_test.py)
+A good script to benchmark and compare is [this one](https://github.com/Argandov/python/blob/main/exercises_lessons/generators_memory_test.py) or [this one](https://github.com/Argandov/python/blob/main/experiments/nonce_generator.py)
 
 Example of use:
 

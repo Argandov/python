@@ -3,19 +3,18 @@
 from Crypto.Hash import SHA256 as sha
 
 # Generates a hash from <string>+<digit>, and the goal is to find
-# what <digit> will hash the <string> with a resulting digest
-# that starts with "666". From nonce in blockchain
+# what (nonce) will result in a hash that starts with "666". 
+# (From nonces in blockchain)
 
 h = sha.new()
 count = 0
 print(dir(h))
 for digit in range(1, 1000000):
-    h.update(b'Hello' + bytes(digit))
+    h.update(b'This string can be of any data' + bytes(digit))
 
-    if str(h.hexdigest()).lower().startswith("666"):
+    if str(h.hexdigest()).startswith("666"):
         print(str(h.decode("hex")))
-        print(f"Nonce: {digit}\t@{count}\n")
-
+        print(f"Nonce found: {digit}\t@{count} iteration\n")
         print(h.hexdigest())
     count += 1
 
