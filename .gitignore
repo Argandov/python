@@ -4,3 +4,5 @@ dumping
 other
 upload_changes.sh
 python_tools.md
+__pycache__
+.gitignore
