@@ -21,27 +21,30 @@ compare & swap:
 
 '''
 # Random list generator (10 numbers from 1-100):
-l1 = [randint(1,100) for num in range(1, 10)] 
+l1 = [randint(1, 100) for num in range(1, 10)]
+
 
 def sel_sort(l1):
-    swap_state = 0 
+    swap_state = 0
     x = 0
     while x < len(l1):
-        for y in range(x, len(l1)-1): 
-        # The y index MUST be greater than x
-        # else, the sorting runs also backwards
+        for y in range(x, len(l1)-1):
+            # The y index MUST be greater than x
+            # else, the sorting runs also backwards
             if l1[x] > l1[y+1]:
-                l1[x], l1[y+1] = l1[y+1], l1[x] 
+                l1[x], l1[y+1] = l1[y+1], l1[x]
                 # Print the new list every time a swap happens:
                 print(f"  [+] Sorted --- {l1}")
-                swap_state = 1 # Stays 0 if nothing to swap
+                swap_state = 1  # Stays 0 if nothing to swap
         x += 1
-        if swap_state == 0: # return 1 if the loops didn't change swap_state var
+        if swap_state == 0:      # return 1 if the loops didn't \
+                # change swap_state var
             return 1
 
+
 print(f"[0] Sorting: {l1}")
+sort_state = 0
 while not sort_state:
     if sel_sort(l1):
         sort_state = 1
         print(f"[S] Final list --- {l1}")
-

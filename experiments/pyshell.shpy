@@ -17,6 +17,7 @@ exec  /usr/bin/python $0
 exit 1
 """#"
 
+
 def do_some_stuff():
 	print("some stuff done by python")
 	return 0

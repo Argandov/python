@@ -3,7 +3,7 @@
 from Crypto.Hash import SHA256 as sha
 
 # Generates a hash from <string>+<digit>, and the goal is to find
-# what (nonce) will result in a hash that starts with "666". 
+# what (nonce) will result in a hash that starts with "666".
 # (From nonces in blockchain)
 
 h = sha.new()
@@ -18,5 +18,5 @@ for digit in range(1, 1000000):
         print(h.hexdigest())
     count += 1
 
-# TO-DO: 
+# TO-DO:
 # Multi-threading vs. Multi-processing

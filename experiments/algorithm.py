@@ -1,5 +1,13 @@
 #!/usr/bin/python3
-# Divides the input in half, and the result again in half until the end result is 1. To see how many iterations would take to split a given number, and how the count would grow as the numbers get bigger.
+
+'''
+
+divide(n) is the same as log2(n)
+
+Prints out the number of iterations it takes to split in half a number until
+the end result is < 1. Useful for DSA coursework
+
+'''
 
 def divide(number):
     init_number = str(number)
@@ -10,4 +18,11 @@ def divide(number):
         counter += 1
     print(f"Iterations for {init_number}: {counter}")
 
-divide(int(input("number: ")))
+
+num = input("Number: ")
+# Take the input and do the tests with 3 halves of the same number
+divide(int(num))
+num = int(num)/2
+divide(num)
+num = int(num)/2
+divide(num)

