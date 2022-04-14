@@ -1,3 +1,6 @@
+# To-Do:
+Organize this repository, from exercises and experiments, reminders to actual tools
+
 # python learning
 All things python
 + Learning Data structures & algorithms
