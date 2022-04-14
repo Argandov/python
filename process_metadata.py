@@ -3,7 +3,11 @@ import pdfx
 import pprint
 from PyPDF2 import PdfFileReader, PdfFileWriter
 import sys
-
+'''
+To-Do:
+> Read again the metadata of the new file
+> Improve prompts (It only accepts "Y" or nothing)
+'''
 
 # reading pdf file
 try:
