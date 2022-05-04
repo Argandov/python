@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# First the program is executed with bash (shebang line). Then,
+# This bash execution will run "python $0", re-opening the file but with
+# python and ignoring the bash section.
+# No idea what usefulness this can have
+
+"""":
+MYFILE='newfile.txt'
+do_some_stuff () {
+
+  echo "Some stuff done by bash" > $MYFILE
+  echo $(date) >> $MYFILE && echo "Success writing file"
+  return 0
+}
+
+do_some_stuff
+
+# Execute python with $MYFILE as argument, process it, and re-process it at stdout with SED
+exec  /usr/bin/python3 $0 $MYFILE | sed 's/9/XX/'
+exit 1
+"""#"
+import sys
+
+def _READFILE(IN):
+    for a in range(1, 10):
+        print(a)
+    with open(IN,'r') as My_File:
+        print(My_File.readlines())
+
+My_File = sys.argv[1]
+_READFILE(My_File)
